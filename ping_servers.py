@@ -17,7 +17,7 @@ while True:
     
     # this is the loop that will run every X seconds (see the variable 'seconds' above and 'time.sleep()' below)
     for i in range(0,len(servers)):
-        print(f'Sending pings to server {servers[i]} ...\n')
+        print(f'Sending pings to server {servers[i]} ...')
         
         # this command SENDS THE PING(S) and WRITES THE OUTPUT to the 'ping.txt' file
         os.system(f'ping -c 1 {servers[i]} > ping.txt')
@@ -29,11 +29,11 @@ while True:
         # the following statements check if the pings were successful or not
         # by searching in the 'ping.txt' file
         if ' 0% ' in txt:
-            print(f'Ping successful to server {servers[i]}\n')
+            print(f'Ping SUCCESSFUL to server {servers[i]}\n')
         else:
             pings[i] += 1
-            print(f'Ping not succesful to server {servers[i]}')
-            print(f'missed pings to server {servers[i]} is {pings[i]}\n')
+            print(f'Ping NOT SUCCESSFUL to server {servers[i]}')
+            print(f'{pings[i]} MISSED pings to server {servers[i]}\n')
             
             # if one of the servers couldn't be pinged for 3 times
             # an email message can be sent (the code needed for that can be added)
