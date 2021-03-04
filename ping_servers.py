@@ -15,7 +15,7 @@ seconds = 30
 while True:
     print('\nPress "Ctrl" + "C" to stop this program\n')
     
-    # this is the loop that will run every X seconds (see 'seconds' above and 'time.sleep()' below)
+    # this is the loop that will run every X seconds (see the variable 'seconds' above and 'time.sleep()' below)
     for i in range(0,len(servers)):
         print(f'Sending pings to server {servers[i]} ...\n')
         
