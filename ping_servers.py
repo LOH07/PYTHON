@@ -12,7 +12,7 @@ pings = [0,0]
 while True:
     print('\nPress "Ctrl" + "C" to stop this program\n')
     
-    # this is the loop that will run every 10 seconds (see 'time.sleep(10)' below)
+    # this is the loop that will run every X seconds (see 'time.sleep()' below)
     for i in range(0,len(servers)):
         print(f'Sending pings to server {servers[i]} ...\n')
         
@@ -24,12 +24,16 @@ while True:
             txt = f.read()
         
         # the following statements check if the pings were successful or not
+        # by searching in the 'ping.txt' file
         if ' 0% ' in txt:
             print(f'Ping successful to server {servers[i]}\n')
         else:
             pings[i] += 1
             print(f'Ping not succesful to server {servers[i]}')
             print(f'missed pings to server {servers[i]} is {pings[i]}\n')
+            
+            # if one of the servers couldn't be pinged for 3 times
+            # an email message can be sent (the code needed for that can be added)
             if pings[i] == 3:
                 print('Sending email message ...')
                 pings[i] = 0
@@ -39,6 +43,7 @@ while True:
     print('Waiting 10 seconds ...')
     
     # this command creates a break of 10 seconds between the FOR LOOPS
+    # so the 'servers' are pinged every 10 seconds and THIS CAN BE ADJUSTED as needed
     time.sleep(10)
     
     # this command CLEARS the terminal (the screen)
