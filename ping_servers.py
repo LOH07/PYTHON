@@ -8,7 +8,7 @@ servers = ['0.0.0.1','127.0.0.1']
 # so the len(pings) should be equal to the len(servers)
 pings = [0,0]
 
-# the number of seconds to wait between pings (ADJUST AS NEEDED!)
+# the number of seconds to wait between pings (ADJUST IT AS NEEDED!)
 seconds = 30
 
 # this is the MAIN LOOP that will run until someone presses 'Ctrl'+'C'
