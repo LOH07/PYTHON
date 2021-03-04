@@ -36,6 +36,8 @@ while True:
             # an email message can be sent (the code needed for that can be added)
             if pings[i] == 3:
                 print('Sending email message ...')
+                
+                # this resets to zero the pings for the server which couldn't be pinged
                 pings[i] = 0
             else:
                 pass
